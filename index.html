@@ -45,7 +45,7 @@ https://jugarteo.github.io/TES/
 function oninputFunct() {
     var frecuencia = +document.getElementById("first-value").value;
     var resistencia = +document.getElementById("second-value").value;
-	var cap = 1/(2*3.141592653589793*frecuencia * resistencia);
+	var cap = 1/(2*Math.PI*frecuencia * resistencia);
 document.getElementById("output1").innerHTML = cap;
 						}
 </script>
