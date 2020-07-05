@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<meta name="author" content=github.com/jugarteo">
+<meta name="author" content=Jorge Ugarte Olguín>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 <title>Electro-Calc</title>
@@ -18,7 +18,7 @@
         body { 
             font-family: -apple-system,  
                 BlinkMacSystemFont, sans-serif; 
-        } 
+             } 
     </style>
  
 <h1 style="text-align:center;">Calculadora de Circuitos Electrónicos</h1>
@@ -43,7 +43,9 @@
 <p style="text-align:center;">El valor de la frecuencia está en Hertz:</p>
 <p style="text-align:center;" id="output2"></p>
 
+<hr>
 </body>
+	
 <script>
 function oninputFunct() {
     var frecuencia = +document.getElementById("first-value").value;
@@ -55,8 +57,7 @@ document.getElementById("output1").innerHTML = cap;
     var res2 = +document.getElementById("4-value").value;
 	var fc = 1/(2*Math.PI*cap2*res2);
 document.getElementById("output2").innerHTML = fc;
-						}
-    
+			}
 </script>	
 		
 </html>
