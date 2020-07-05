@@ -1,9 +1,3 @@
-<!--Copyright (C) {2020} @jugarteo
-Página diseñada para estudiar conceptos de electrónica
-Date of creation: July 05, 2020
-https://jugarteo.github.io/TES/
-\--> 
-
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,19 +33,7 @@ https://jugarteo.github.io/TES/
 <p style="text-align:center;">El valor del condensador está en Faradios [F]:</p>
 <p style="text-align:center;" id="output1"></p>
 
-</body>
 
-<script>
-function oninputFunct() {
-    var frecuencia = +document.getElementById("first-value").value;
-    var resistencia = +document.getElementById("second-value").value;
-	var cap = 1/(2*Math.PI*frecuencia * resistencia);
-document.getElementById("output1").innerHTML = cap;
-						}
-</script>
-
-	
-	
 <p style="text-align:center;">Cálculo Frecuencia de Corte:</p>
 <p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>f</mi><mi>c</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>R</mi><mi>C</mi></mrow></mfrac></mstyle></math>
 
@@ -64,19 +46,19 @@ document.getElementById("output1").innerHTML = cap;
 <p style="text-align:center;" id="output2"></p>
 
 </body>
-
 <script>
 function oninputFunct() {
-    var cap2 = +document.getElementById("3-value").value;
+    var frecuencia = +document.getElementById("first-value").value;
+    var resistencia = +document.getElementById("second-value").value;
+	var cap = 1/(2*Math.PI*frecuencia * resistencia);
+document.getElementById("output1").innerHTML = cap;
+
+	var cap2 = +document.getElementById("3-value").value;
     var res2 = +document.getElementById("4-value").value;
 	var fc = 1/(2*Math.PI*cap2*res2);
 document.getElementById("output2").innerHTML = fc;
 						}
+    
 </script>	
-	
-	
+		
 </html>
-<!--
-<hr>
-
-<p style="text-align:center;">© Copyright 2020 <a href="https://github.com/showiz">showiz</a> & <a href="https://github.com/jugarteo">jugarte</a></p>\--> 
