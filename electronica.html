@@ -1,0 +1,57 @@
+<!--Copyright (C) {2020} @jugarteo
+Página diseñada para estudiar conceptos de electrónica
+Date of creation: July 05, 2020
+https://jugarteo.github.io/TES/
+\--> 
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>Calculadora e</title>
+    
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/JUgarteO/calculosc/master/favicon/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://github.com/JUgarteO/calculosc/blob/master/favicon/apple-touch-icon-144x144.png?raw=true" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://github.com/JUgarteO/calculosc/blob/master/favicon/apple-touch-icon-120x120.png?raw=true" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://github.com/JUgarteO/calculosc/blob/master/favicon/apple-touch-icon-72x72.png?raw=true" />
+<link rel="apple-touch-icon-precomposed" href="https://github.com/JUgarteO/calculosc/blob/master/favicon/favicon-128.png?raw=true" />
+</head>
+
+<body>
+<style> 
+        body { 
+            font-family: -apple-system,  
+                BlinkMacSystemFont, sans-serif; 
+        } 
+    </style>
+ 
+<h1 style="text-align:center;">Calculadora de circuitos electrónicos”.</h1>
+
+<p style="text-align:center;">Cálculo Condensador:</p>
+<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>C</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><msub><mi>X</mi><mi>c</mi></msub></mrow></mfrac></mrow></mstyle></math>
+
+<p style="text-align:center;"> A continuación escriba:</p>
+
+<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>: <input type="tel" pattern="[0-9]*" placeholder=frecuencia id="first-value" oninput="oninputFunct()"></p>
+<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mi>C</mi></msub></math>: <input type="tel" pattern="[0-9]*" placeholder=resistencia id="second-value" oninput="oninputFunct()"></p>
+
+<p style="text-align:center;">El valor del condensador está en Faradios [F]:</p>
+<p style="text-align:center;" id="output1"></p>
+
+</body>
+
+<script>
+function oninputFunct() {
+    var frecuencia = +document.getElementById("first-value").value;
+    var resistencia = +document.getElementById("second-value").value;
+	var cap = 1/(2*3.14*frecuencia * resistencia);
+document.getElementById("output1").innerHTML = cap;
+						}
+</script>
+
+</html>
+<!--
+<hr>
+
+<p style="text-align:center;">© Copyright 2020 <a href="https://github.com/showiz">showiz</a> & <a href="https://github.com/jugarteo">jugarte</a></p>\--> 
