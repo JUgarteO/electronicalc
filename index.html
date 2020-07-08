@@ -8,8 +8,8 @@
 function oninputFunct()	{
 	var frecuencia = +document.getElementById("first-value").value;
 	var resistencia = +document.getElementById("second-value").value;
-	var cap = 1/(2 * Math.PI * frecuencia * resistencia);
-	document.getElementById("output1").innerHTML = "El valor del condensador es de: " + cap + " [F]";
+	var cap = 1000000 * 1/(2 * Math.PI * frecuencia * resistencia);
+	document.getElementById("output1").innerHTML = "El valor del condensador es de: " + cap.toFixed(6) + " [uF]";
 
 	var cap2 = +document.getElementById("3-value").value;
 	var res2 = +document.getElementById("4-value").value;
@@ -29,7 +29,7 @@ function oninputFunct()	{
 </script>
 </head>
 <body>
-	<style> 
+<style>
         body 					{ 
             font-family: -apple-system,  
                 BlinkMacSystemFont, sans-serif; }
@@ -62,4 +62,8 @@ function oninputFunct()	{
 <p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9]*" placeholder=condensador[F]         id="4-value" oninput="oninputFunct()"></p>
 <p style="text-align:center;" id="output2"></p>
 </body>
+<footer>
+<hr>
+<center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/es/80x15.png" /></a></center>
+</footer>
 </html>
