@@ -23,8 +23,7 @@
 <p style="text-align:center;">El valor está en Volts</p>
 <p style="text-align:center;" id="output3"></p>
 <br>
-<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>V</mi><mo>=</mo><mi>R</mi><mo>&#xB7;</mo><mi>i</mi></mrow></mstyle></math>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9]*" placeholder=voltaje[V]   id="8-value" oninput="oninputFunct()"></p>
+<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>R</mi><mo>=</mo><mfrac><mi>V</mi><mi>i</mi></mfrac></mrow></mstyle></math><p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9]*" placeholder=voltaje[V]   id="8-value" oninput="oninputFunct()"></p>
 <p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9]*" placeholder=corriente[A] id="7-value" oninput="oninputFunct()"></p>
 <p style="text-align:center;">El valor está en Omhs</p>
 <p style="text-align:center;" id="output4"></p>
@@ -32,6 +31,7 @@
 <p style="text-align:center;">Cálculo Condensador:</p>
 <p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>C</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><msub><mi>X</mi><mi>c</mi></msub></mrow></mfrac></mrow></mstyle></math>
 <center><code style="text-align: center;">C = Condensador;f = Frecuencia;Xc = Reactancia capacitiva</code></center>
+    
 <p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9]*" placeholder=frecuencia[Hz] id="first-value" min="0" oninput="oninputFunct()"></p>
 <p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mi>c</mi></msub></math>: <input type="tel" pattern="[0-9]*" placeholder=reactancia[Ω] min="0" id="second-value" oninput="oninputFunct()"></p>
 <p style="text-align:center;">El valor del condensador está en Faradios [F]:</p>
@@ -70,3 +70,4 @@ function oninputFunct()	{
 			}
 </script>			
 </html>
+
