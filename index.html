@@ -1,91 +1,91 @@
 <!DOCTYPE html>
 <html>
-<meta name="author" content=Jorge Ugarte Olguín>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<head>
-<title>Electro-Calc</title>
-<script>
-function oninputFunct()	{
-	var frecuencia = +document.getElementById("first-value").value;
-	var resistencia = +document.getElementById("second-value").value;
-	var cap = 1000000 * 1/(2 * Math.PI * frecuencia * resistencia);
-	document.getElementById("output1").innerHTML = "El valor del condensador es: " + cap.toFixed(6) + " [uF]";
+	<meta name="author" content=Jorge Ugarte Olguín>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<title>Electro-Calc</title>
+		<script>
+		function oninputFunct()	{
+			var frecuencia = +document.getElementById("first-value").value;
+			var resistencia = +document.getElementById("second-value").value;
+			var cap = 1000000 * 1/(2 * Math.PI * frecuencia * resistencia);
+			document.getElementById("output1").innerHTML = "El valor del condensador es: " + cap.toFixed(6) + " [uF]";
 
-	var cap2 = +document.getElementById("3-value").value;
-	var res2 = +document.getElementById("4-value").value;
-	var fc = 1/(2 * Math.PI * cap2 * res2);
-	document.getElementById("output2").innerHTML = "El valor de la frecuencia de corte es: " + fc + " [Hz]";
+			var cap2 = +document.getElementById("3-value").value;
+			var res2 = +document.getElementById("4-value").value;
+			var fc = 1/(2 * Math.PI * cap2 * res2);
+			document.getElementById("output2").innerHTML = "El valor de la frecuencia de corte es: " + fc + " [Hz]";
 
-	var fre22 = +document.getElementById("11-value").value;
-	var cap22 = +document.getElementById("12-value").value;
-	var res22 = 1/(2 * Math.PI * fre22 * cap22);
-	document.getElementById("output6").innerHTML = "El valor de la resistencia es: " + Math.round(res22) + " [Ω]";
+			var fre22 = +document.getElementById("11-value").value;
+			var cap22 = +document.getElementById("12-value").value;
+			var res22 = 1/(2 * Math.PI * fre22 * cap22);
+			document.getElementById("output6").innerHTML = "El valor de la resistencia es: " + Math.round(res22) + " [Ω]";
 	
-	var res = +document.getElementById("5-value").value;
-	var corriente = +document.getElementById("6-value").value;
-	var volt = corriente * res;
-	document.getElementById("output3").innerHTML = "El valor del voltaje es: " + volt + " [V]";
+			var res = +document.getElementById("5-value").value;
+			var corriente = +document.getElementById("6-value").value;
+			var volt = corriente * res;
+			document.getElementById("output3").innerHTML = "El valor del voltaje es: " + volt + " [V]";
 
-	var corr3 = +document.getElementById("7-value").value;
-	var volt3 = +document.getElementById("8-value").value;
-	var res3 = volt3/corr3;
-	document.getElementById("output4").innerHTML = "El valor de la resistencia es: " + Math.round(res3) + " [Ω]";
+			var corr3 = +document.getElementById("7-value").value;
+			var volt3 = +document.getElementById("8-value").value;
+			var res3 = volt3/corr3;
+			document.getElementById("output4").innerHTML = "El valor de la resistencia es: " + Math.round(res3) + " [Ω]";
 
-	var volt2 = +document.getElementById("9-value").value;
-	var rest2 = +document.getElementById("10-value").value;
-	var corr2 = volt2/rest2;
-	document.getElementById("output5").innerHTML = "El valor de la corriente es de: " + corr2 + " [A]";
+			var volt2 = +document.getElementById("9-value").value;
+			var rest2 = +document.getElementById("10-value").value;
+			var corr2 = volt2/rest2;
+			document.getElementById("output5").innerHTML = "El valor de la corriente es de: " + corr2 + " [A]";
 			            }
-</script>
-</head>
-<body>
-<style>
-        body 					{ 
-            font-family: -apple-system,  
-                BlinkMacSystemFont, sans-serif; }
-	</style>
-<div class="container-fluid	">
-<h1 style="text-align:center;">Calculadora de Circuitos Electrónicos</h1>
+		</script>
+	</head>
+	<body>
+		<style>
+        		body 					{ 
+           		 font-family: -apple-system,  
+               		 BlinkMacSystemFont, sans-serif; }
+		</style>
+		<div class="container-fluid	">
+		<h1 style="text-align:center;">Calculadora de Circuitos Electrónicos</h1>
 
-<p style="text-align:center;">Ley de Ohm:</p>
-<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>V</mi><mo>=</mo><mi>R</mi><mo>&#xB7;</mo><mi>i</mi></mrow></mstyle></math>
-<center><code>V = voltaje;R = Resistencia;i = Corriente</code></center>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="5-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=corriente[A]           id="6-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;" id="output3"></p>
-<br>
-<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>R</mi><mo>=</mo><mfrac><mi>V</mi><mi>i</mi></mfrac></mrow></mstyle></math>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=voltaje[V]   id="8-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=corriente[A] id="7-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;" id="output4"></p>
-<br>
-<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>i</mi><mo>=</mo><mfrac><mi>V</mi><mi>R</mi></mfrac></mrow></mstyle></math>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=voltaje[V]     min="0" id="9-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω]         id="10-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;" id="output5"></p>
-<hr>
-<p style="text-align:center;">Filtro RC:</p>
-<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>C</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><msub><mi>X</mi><mi>c</mi></msub></mrow></mfrac></mrow></mstyle></math>
-<center><code style="text-align: center;">C = Condensador;f = Frecuencia;Xc = Reactancia capacitiva</code></center>
+		<p style="text-align:center;">Ley de Ohm:</p>
+	<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>V</mi><mo>=</mo><mi>R</mi><mo>&#xB7;</mo><mi>i</mi></mrow></mstyle></math>
+	<center><code>V = voltaje;R = Resistencia;i = Corriente</code></center>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="5-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=corriente[A]           id="6-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;" id="output3"></p>
+	<br>
+	<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>R</mi><mo>=</mo><mfrac><mi>V</mi><mi>i</mi></mfrac></mrow></mstyle></math>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=voltaje[V]   id="8-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=corriente[A] id="7-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;" id="output4"></p>
+	<br>
+	<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>i</mi><mo>=</mo><mfrac><mi>V</mi><mi>R</mi></mfrac></mrow></mstyle></math>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=voltaje[V]     min="0" id="9-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω]         id="10-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;" id="output5"></p>
+	<hr>
+	<p style="text-align:center;">Filtro RC:</p>
+	<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>C</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><msub><mi>X</mi><mi>c</mi></msub></mrow></mfrac></mrow></mstyle></math>
+	<center><code style="text-align: center;">C = Condensador;f = Frecuencia;Xc = Reactancia capacitiva</code></center>
     
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=frecuencia[Hz] id="first-value" min="0" oninput="oninputFunct()"></p>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mi>c</mi></msub></math>: <input type="tel" pattern="[0-9.]*" placeholder=reactancia[Ω] min="0" id="second-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;" id="output1"></p>
-<br>
-<p style="text-align:center;">Frecuencia de Corte:</p>
-<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>f</mi><mi>c</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>R</mi><mi>C</mi></mrow></mfrac></mstyle></math>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="3-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=condensador[F]         id="4-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;" id="output2"></p>
-<br>
-<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>R</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><mi>C</mi></mrow></mfrac></mstyle></math>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="11-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=condensador[F]         id="12-value" oninput="oninputFunct()"></p>
-<p style="text-align:center;" id="output6"></p>
-</div>
-</body>
-<footer>
-<hr>
-<center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/es/80x15.png" /></a></center>
-</footer>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=frecuencia[Hz] id="first-value" min="0" oninput="oninputFunct()"></p>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mi>c</mi></msub></math>: <input type="tel" pattern="[0-9.]*" placeholder=reactancia[Ω] min="0" id="second-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;" id="output1"></p>
+	<br>
+	<p style="text-align:center;">Frecuencia de Corte:</p>
+	<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>f</mi><mi>c</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>R</mi><mi>C</mi></mrow></mfrac></mstyle></math>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="3-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=condensador[F]         id="4-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;" id="output2"></p>
+	<br>
+	<p style="text-align:center;"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>R</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><mi>C</mi></mrow></mfrac></mstyle></math>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="11-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=condensador[F]         id="12-value" oninput="oninputFunct()"></p>
+	<p style="text-align:center;" id="output6"></p>
+	</div>
+	</body>
+	<footer>
+	<hr>
+	<center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/es/80x15.png" /></a></center>
+	</footer>
 </html>
