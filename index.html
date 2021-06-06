@@ -1,93 +1,128 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="author" content=Jorge Ugarte Olguín>
+		<meta name="author" content="Jorge Ugarte Olguín">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Página web que permite calcular valores de Ley de Ohm y filtros RC, entre más...">
+		<meta name="description" content="Calculadora web asociadas al calculo de sonido...">
 		<title>Calculadora Electrónica</title>
 		<style>
-        		body	{ 
-           		 font-family: -apple-system,  
+        		body,h1,h2	{
+           		 font-family: -apple-system,
                		 BlinkMacSystemFont, sans-serif;	}
-			p  	{
+				p,h1,h2  			{
 				text-align: center;		}
 		</style>
 		<script>
-		function oninputFunct()	{
+			function oninputFunct()	{
+			//condensador	
 			var frecuencia = +document.getElementById("first-value").value;
 			var resistencia = +document.getElementById("second-value").value;
 			var cap = 1000000 * 1/(2 * Math.PI * frecuencia * resistencia);
 			document.getElementById("output1").innerHTML = "El valor del condensador es: " + cap.toFixed(6) + " [uF]";
 
+			//frecuencia corte	
 			var cap2 = +document.getElementById("3-value").value;
 			var res2 = +document.getElementById("4-value").value;
 			var fc = 1/(2 * Math.PI * cap2 * res2);
 			document.getElementById("output2").innerHTML = "El valor de la frecuencia de corte es: " + Math.round(fc) + " [Hz]";
-
+			
+			//resistencia
 			var fre22 = +document.getElementById("11-value").value;
 			var cap22 = +document.getElementById("12-value").value;
 			var res22 = 1/(2 * Math.PI * fre22 * cap22);
 			document.getElementById("output6").innerHTML = "El valor de la resistencia es: " + Math.round(res22) + " [Ω]";
-	
+			
+			//voltaje
 			var res = +document.getElementById("5-value").value;
 			var corriente = +document.getElementById("6-value").value;
 			var volt = corriente * res;
 			document.getElementById("output3").innerHTML = "El valor del voltaje es: " + volt + " [V]";
-
+			
+			//resistencia
 			var corr3 = +document.getElementById("7-value").value;
 			var volt3 = +document.getElementById("8-value").value;
 			var res3 = volt3/corr3;
 			document.getElementById("output4").innerHTML = "El valor de la resistencia es: " + Math.round(res3) + " [Ω]";
-
+			
+			//corriente
 			var volt2 = +document.getElementById("9-value").value;
 			var rest2 = +document.getElementById("10-value").value;
 			var corr2 = volt2/rest2;
 			document.getElementById("output5").innerHTML = "El valor de la corriente es de: " + corr2 + " [A]";
+
+			//atenuacion
+			var d1 = +document.getElementById("d1").value;
+			var d2 = +document.getElementById("d2").value;
+			var p = +document.getElementById("p").value;
+			var atd = p-20*Math.log10(d1/d2);
+			document.getElementById("output7").innerHTML = "la atenuación por distancia es de: " + Math.round(atd*100.0)/100.0 + " [dB NPS]";
 			            }
+			
+			 function nextFocus(inputF, inputS)    {
+            document.getElementById(inputF).addEventListener('keydown', function(event) {
+                if (event.keyCode == 13) {
+                    document.getElementById(inputS).focus();}
+            });}
+			
 		</script>
 	</head>
 	<body>
-		<div class="container-fluid	">
-		<h1 style="text-align:center;">Calculadora de Circuitos Electrónicos</h1>
-		<p>Ley de Ohm:</p>
-		<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>V</mi><mo>=</mo><mi>R</mi><mo>&#xB7;</mo><mi>i</mi></mrow></mstyle></math>
-		<center><code>V = voltaje;R = Resistencia;i = Corriente</code></center>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="5-value" oninput="oninputFunct()"></p>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=corriente[A]           id="6-value" oninput="oninputFunct()"></p>
-		<p id="output3"></p>
-		<br>
-		<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>R</mi><mo>=</mo><mfrac><mi>V</mi><mi>i</mi></mfrac></mrow></mstyle></math>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=voltaje[V]   id="8-value" oninput="oninputFunct()"></p>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=corriente[A] id="7-value" oninput="oninputFunct()"></p>
-		<p id="output4"></p>
-		<br>
-		<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>i</mi><mo>=</mo><mfrac><mi>V</mi><mi>R</mi></mfrac></mrow></mstyle></math>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=voltaje[V]     min="0" id="9-value" oninput="oninputFunct()"></p>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω]         id="10-value" oninput="oninputFunct()"></p>
-		<p id="output5"></p>
-		<hr>
-		<p>Filtro RC:</p>
-		<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>C</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><msub><mi>X</mi><mi>c</mi></msub></mrow></mfrac></mrow></mstyle></math>
-		<center><code style="text-align: center;">C = Condensador;f = Frecuencia;Xc = Reactancia capacitiva</code></center>
-    
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=frecuencia[Hz] id="first-value" min="0" oninput="oninputFunct()"></p>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mi>c</mi></msub></math>: <input type="tel" pattern="[0-9.]*" placeholder=reactancia[Ω] min="0" id="second-value" oninput="oninputFunct()"></p>
-		<p id="output1"></p>
-		<br>
-		<p>Frecuencia de Corte:</p>
-		<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>f</mi><mi>c</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>R</mi><mi>C</mi></mrow></mfrac></mstyle></math>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="3-value" oninput="oninputFunct()"></p>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=condensador[F]         id="4-value" oninput="oninputFunct()"></p>
-		<p id="output2"></p>
-		<br>
-		<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>R</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><mi>C</mi></mrow></mfrac></mstyle></math>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=resistencia[Ω] min="0" id="11-value" oninput="oninputFunct()"></p>
-		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder=condensador[F]         id="12-value" oninput="oninputFunct()"></p>
-		<p id="output6"></p>
+		<div class="container-fluid">
+			<h1>Calculadora de Circuitos Electrónicos</h1>
+			<h2>Ley de Ohm:</h2>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>V</mi><mo>=</mo><mi>R</mi><mo>&#xB7;</mo><mi>i</mi></mrow></mstyle></math></p>
+			<center><code>V = voltaje; R = Resistencia; i = Corriente</code></center>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]" min="0" id="5-value" oninput="oninputFunct()" onkeypress="nextFocus('5-value', '6-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="6-value" oninput="oninputFunct()" onkeypress="nextFocus('6-value', '8-value')"></p>
+			<p id="output3"></p>
+			<br>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>R</mi><mo>=</mo><mfrac><mi>V</mi><mi>i</mi></mfrac></mrow></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"   id="8-value" oninput="oninputFunct()" onkeypress="nextFocus('8-value', '7-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="7-value" oninput="oninputFunct()" onkeypress="nextFocus('7-value', '9-value')"></p>
+			<p id="output4"></p>
+			<br>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>i</mi><mo>=</mo><mfrac><mi>V</mi><mi>R</mi></mfrac></mrow></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"     min="0" id="9-value" oninput="oninputFunct()" onkeypress="nextFocus('9-value', '10-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]"         id="10-value" oninput="oninputFunct()" onkeypress="nextFocus('10-value', 'first-value')"></p>
+			<p id="output5"></p>
+			<hr>
+			<h2>Filtro RC:</h2>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>C</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><msub><mi>X</mi><mi>c</mi></msub></mrow></mfrac></mrow></mstyle></math></p>
+			<center><code style="text-align: center;">C = Condensador; f = Frecuencia; Xc = Reactancia capacitiva; R = Resistencia</code></center>
+
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="first-value" min="0" oninput="oninputFunct()" onkeypress="nextFocus('first-value', 'second-value')" ></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mi>c</mi></msub></math>: <input type="tel" pattern="[0-9.]*" placeholder="reactancia [Ω]" min="0" id="second-value" oninput="oninputFunct()" onkeypress="nextFocus('second-value', '3-value')" ></p>
+			<p id="output1"></p>
+			<br>
+			<p>Frecuencia de Corte:</p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>f</mi><mi>c</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>R</mi><mi>C</mi></mrow></mfrac></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]" min="0" id="3-value" oninput="oninputFunct()" onkeypress="nextFocus('3-value', '4-value')"  ></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="condensador [F]" id="4-value" oninput="oninputFunct()" onkeypress="nextFocus('4-value', '11-value')"></p>
+			<p id="output2"></p>
+			<br>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>R</mi><mo>=</mo></mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><mi>C</mi></mrow></mfrac></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]" min="0" id="11-value" oninput="oninputFunct()" onkeypress="nextFocus('11-value', '12-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="condensador [F]" id="12-value" oninput="oninputFunct()" onkeypress="nextFocus('12-value', 'd1')"></p>
+			<p id="output6"></p>
+			<hr>
+			<h2>Nivel de Presión Sonora (Lp)</h2>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><msub><mi>L</mi><mi>P</mi></msub><mo>=</mo><mn>20</mn><mo>&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>10</mn></msub><mfenced><mfrac><msub><mi>P</mi><mn>1</mn></msub><msub><mi>P</mi><mn>0</mn></msub></mfrac></mfenced></mstyle></math></p>
+			<center><code>log = logaritmo base 10; P1 = presión sonora eficaz (RMS); P0 = presión de referencia: 20 [μPa]</code></center>
+		
+			<p>Atenuación por distancia</p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><msub><mi>L</mi><mi mathvariant="italic">P</mi></msub><mo mathvariant="italic">=</mo><mi>N</mi><mi>P</mi><mi>S</mi><mo mathvariant="italic">-</mo><mn mathvariant="italic">20</mn><mo mathvariant="italic">&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn mathvariant="italic">10</mn></msub><mfenced><mfrac bevelled="true"><mrow><mi mathvariant="italic">d</mi><mi mathvariant="italic">i</mi><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">a</mi><mi mathvariant="italic">n</mi><mi mathvariant="italic">c</mi><mi mathvariant="italic">i</mi><msub><mi mathvariant="italic">a</mi><mn mathvariant="italic">1</mn></msub></mrow><mrow><mi mathvariant="italic">d</mi><mi mathvariant="italic">i</mi><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">a</mi><mi mathvariant="italic">n</mi><mi mathvariant="italic">c</mi><mi mathvariant="italic">i</mi><msub><mi mathvariant="italic">a</mi><mn mathvariant="italic">2</mn></msub></mrow></mfrac></mfenced></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d1</mi></math>:
+			<input type="tel" pattern="[0-9.]*" placeholder="distancia [m]" min="0" id="d1" oninput="oninputFunct()" onkeypress="nextFocus('d1', 'd2')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d2</mi></math>:
+			<input type="tel" pattern="[0-9.]*" placeholder="distancia [m]" min="0" id="d2" oninput="oninputFunct()" onkeypress="nextFocus('d2', 'p')"></p>	
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>NPS</mi></math>:
+			<input type="tel" pattern="[0-9.]*" placeholder="presión [dB]" min="0" id="p" oninput="oninputFunct()" onkeypress="nextFocus('p', 'p')"></p>
+			<p id="output7"></p>
 		</div>
-	</body>
-	<footer>
+		<footer>
 		<hr>
 		<center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/es/80x15.png" /></a></center>
-	</footer>
+		<code><center><a href="mailto:jorgeugarteo@icloud.com">jugarte-2021</a></center></code>
+		</footer>
+	</body>
 </html>
