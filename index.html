@@ -54,7 +54,7 @@
 			var d1 = +document.getElementById("d1").value;
 			var d2 = +document.getElementById("d2").value;
 			var p = +document.getElementById("p").value;
-			var atd = p-20*Math.log10(d1/d2);
+			var atd = p-20*Math.log10(d2/d1);
 			document.getElementById("output7").innerHTML = "la atenuación por distancia es de: " + Math.round(atd*100.0)/100.0 + " [dB NPS]";
 			            }
 			
