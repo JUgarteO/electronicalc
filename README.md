@@ -1,2 +1,3 @@
 # electronica
-Página web diseñada calcular valores de componentes, en distintos circuitos electrónicos.
+Página web diseñada para facilitar el calculo de elementos asociados a la electricidad, electronica, audio u otras ramas técnicas.
+https://jugarteo.github.io/electronicalc/
