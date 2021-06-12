@@ -60,12 +60,12 @@
 			//aumento Pascales
 			var p1 = +document.getElementById("p1").value;
 			var ps = 20*Math.log10(p1/0.000002);
-			document.getElementById("output9").innerHTML = "El aumento es de: " +Math.round(ps*100.0)/100.0 + " [dB<sub>SPL</sub>]";
+			document.getElementById("output9").innerHTML = "El aumento en dB por Presión sonora es de: " +Math.round(ps*100.0)/100.0 + " [dB<sub>SPL</sub>]";
 
 			//incremento
 			var pot = +document.getElementById("pot").value;
 			var aum = 10*Math.log10(pot);
-			document.getElementById("output8").innerHTML = "El aumento es de: " + Math.round(aum*100.0)/100.0 + " [dB<sub>SPL</sub>]"
+			document.getElementById("output8").innerHTML = "El aumento del Nivel de Presión Sonora segun la Potencia es de: " + Math.round(aum*100.0)/100.0 + " [dB<sub>SPL</sub>]"
 			            }
 			//funcion nextFocus
 			 function nextFocus(inputF, inputS)    {
