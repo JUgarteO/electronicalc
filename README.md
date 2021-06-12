@@ -1,3 +1,6 @@
 # electronica
-Página web diseñada para facilitar el calculo de elementos asociados a la electricidad, electronica, audio u otras ramas técnicas.
+Website Calculator:
+-Ohm's law
+-RC filter
+-dB NPS
 https://jugarteo.github.io/electronicalc/
