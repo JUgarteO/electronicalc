@@ -55,17 +55,17 @@
 			var d2 = +document.getElementById("d2").value;
 			var p = +document.getElementById("p").value;
 			var atd = p-20*Math.log10(d2/d1);
-			document.getElementById("output7").innerHTML = "la atenuación por distancia es de: " + Math.round(atd*100.0)/100.0 + " [dB NPS]";
+			document.getElementById("output7").innerHTML = "la atenuación por distancia es de: " + Math.round(atd*100.0)/100.0 + " [dB<sub>SPL</sub>]";
 
 			//aumento Pascales
 			var p1 = +document.getElementById("p1").value;
 			var ps = 20*Math.log10(p1/0.000002);
-			document.getElementById("output9").innerHTML = "El aumento en dB por Presión sonora es de: " +Math.round(ps*100.0)/100.0 + "[dB NPS]";
+			document.getElementById("output9").innerHTML = "El aumento en dB por Presión sonora es de: " +Math.round(ps*100.0)/100.0 + " [dB<sub>SPL</sub>]";
 
 			//incremento
 			var pot = +document.getElementById("pot").value;
 			var aum = 10*Math.log10(pot);
-			document.getElementById("output8").innerHTML = "El aumento del Nivel de Presión Sonora segun la Potencia es de: " + Math.round(aum*100.0)/100.0 + " [dB NPS]"
+			document.getElementById("output8").innerHTML = "El aumento del Nivel de Presión Sonora segun la Potencia es de: " + Math.round(aum*100.0)/100.0 + " [dB<sub>SPL</sub>]"
 			            }
 			//funcion nextFocus
 			 function nextFocus(inputF, inputS)    {
