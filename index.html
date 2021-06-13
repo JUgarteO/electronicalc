@@ -67,8 +67,7 @@
 			var p = +document.getElementById("p").value;
 			var atd = p-20*Math.log10(d2/d1);
 			document.getElementById("output9").innerHTML = "la atenuación por distancia es de: " + Math.round(atd*100.0)/100.0 + " [dB<sub>SPL</sub>]";
-
-
+				
 			            }
 			//funcion nextFocus
 			 function nextFocus(inputF, inputS)    {
@@ -124,7 +123,7 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="pot" oninput="oninputFunct()" onkeypress="nextFocus('pot', 'p1')"></p>
 			<p id="output7"></p>
 			<br>
-			<p>Aumento por Presion Sonora</p>
+			<p>Aumento por Presión Sonora</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><msub><mi>L</mi><mi>P</mi></msub><mo>=</mo><mn>20</mn><mo>&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>10</mn></msub><mfenced><mfrac><msub><mi>P</mi><mn>1</mn></msub><msub><mi>P</mi><mn>0</mn></msub></mfrac></mfenced></mstyle></math></p>
 			<center><code>log = logaritmo base 10; P1 = presión sonora eficaz (RMS); P0 = presión de referencia: 20 [μPa]</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>P1</mi></math>:
