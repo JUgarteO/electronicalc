@@ -73,6 +73,11 @@
 			var frec = +document.getElementById("14-value").value;
 			var onda = vel / frec;
 			document.getElementById("output10").innerHTML = "La longitud de onda es de: " + onda + " [m]";
+				
+			//periodo de onda
+			var frecp = +document.getElementById("15-value").value;
+			var periodo = 1 / frecp;
+			document.getElementById("output11").innerHTML = "El tiempo de la onda es de: " + periodo + " [s]";
 
 			            }
 			//funcion nextFocus
@@ -155,6 +160,17 @@
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="14-value" oninput="oninputFunct()" onkeypress="nextFocus('14-value', '14-value')"></p>
 			<p id="output10"></p>
 			<br>
+			
+			
+			<p>periodo</p>
+			<math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="24px">P</mi><mo mathsize="24px">=</mo><mfrac><mn mathsize="24px">1</mn><mi mathsize="24px">f</mi></mfrac></math>
+			<center><code>P = periodo [s]; f = frecuencia [Hz]</code></center>
+			<br>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi><math><mstyle><mover><mi>V</mi><mo>&#x2192;</mo></mover></mstyle></math></mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="velocidad [m/s]"   id="15-value" oninput="oninputFunct()" onkeypress="nextFocus('14-value', '15-value')"></p>
+			<p id="output11"></p>
+			<br>
+			
+			
 		</div>
 		<footer>
 		<hr>
