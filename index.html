@@ -141,21 +141,21 @@
 			<hr>
 			<h2>Nivel de Presión Sonora (SPL)</h2>
 			<p>Relación NPS Potencia</p>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><msub><mi>L</mi><mi>W</mi></msub><mo mathvariant="italic">=</mo><mn mathvariant="italic">10</mn><mo mathvariant="italic">&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn mathvariant="italic">10</mn></msub><mfenced><mrow><mi>P</mi><mi>o</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>i</mi><mi>a</mi></mrow></mfenced></mstyle></math></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>L</mi><mi>W</mi></msub><mo mathvariant="italic">=</mo><mn mathvariant="italic">10</mn><mo mathvariant="italic">&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn mathvariant="italic">10</mn></msub><mfenced><mrow><mi>P</mi><mi>o</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>i</mi><mi>a</mi></mrow></mfenced></mstyle></math></p>
 			<center><code>Lw = nivel de potencia; log = logaritmo base 10; P = Potencia (Watts)</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Potencia</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="pot" oninput="oninputFunct()" onkeypress="nextFocus('pot', 'p1')"></p>
 			<p id="output7"></p>
 			<br>
 			<p>Aumento por Presión Sonora</p>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><msub><mi>L</mi><mi>P</mi></msub><mo>=</mo><mn>20</mn><mo>&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>10</mn></msub><mfenced><mfrac><msub><mi>P</mi><mn>1</mn></msub><msub><mi>P</mi><mn>0</mn></msub></mfrac></mfenced></mstyle></math></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>L</mi><mi>P</mi></msub><mo>=</mo><mn>20</mn><mo>&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>10</mn></msub><mfenced><mfrac><msub><mi>P</mi><mn>1</mn></msub><msub><mi>P</mi><mn>0</mn></msub></mfrac></mfenced></mstyle></math></p>
 			<center><code>log = logaritmo base 10; P1 = presión sonora eficaz (RMS); P0 = presión de referencia: 20 [μPa]</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>P1</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="presión [Pa]" min="0" id="p1" oninput="oninputFunct()" onkeypress="nextFocus('p1', 'd1')"></p>
 			<p id="output8"></p>
 			<br>
 			<p>Atenuación por distancia</p>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><msub><mi>L</mi><mi mathvariant="italic">P</mi></msub><mo mathvariant="italic">=</mo><mi>N</mi><mi>P</mi><mi>S</mi><mo mathvariant="italic">-</mo><mn mathvariant="italic">20</mn><mo mathvariant="italic">&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn mathvariant="italic">10</mn></msub><mfenced><mfrac bevelled="true"><mrow><mi mathvariant="italic">d</mi><mi mathvariant="italic">i</mi><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">a</mi><mi mathvariant="italic">n</mi><mi mathvariant="italic">c</mi><mi mathvariant="italic">i</mi><msub><mi mathvariant="italic">a</mi><mn mathvariant="italic">2</mn></msub></mrow><mrow><mi mathvariant="italic">d</mi><mi mathvariant="italic">i</mi><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">a</mi><mi mathvariant="italic">n</mi><mi mathvariant="italic">c</mi><mi mathvariant="italic">i</mi><msub><mi mathvariant="italic">a</mi><mn mathvariant="italic">1</mn></msub></mrow></mfrac></mfenced></mstyle></math></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>L</mi><mi mathvariant="italic">P</mi></msub><mo mathvariant="italic">=</mo><mi>N</mi><mi>P</mi><mi>S</mi><mo mathvariant="italic">-</mo><mn mathvariant="italic">20</mn><mo mathvariant="italic">&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn mathvariant="italic">10</mn></msub><mfenced><mfrac bevelled="true"><mrow><mi mathvariant="italic">d</mi><mi mathvariant="italic">i</mi><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">a</mi><mi mathvariant="italic">n</mi><mi mathvariant="italic">c</mi><mi mathvariant="italic">i</mi><msub><mi mathvariant="italic">a</mi><mn mathvariant="italic">2</mn></msub></mrow><mrow><mi mathvariant="italic">d</mi><mi mathvariant="italic">i</mi><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">a</mi><mi mathvariant="italic">n</mi><mi mathvariant="italic">c</mi><mi mathvariant="italic">i</mi><msub><mi mathvariant="italic">a</mi><mn mathvariant="italic">1</mn></msub></mrow></mfrac></mfenced></mstyle></math></p>
 			<center><code>Lp = nivel de perdida; NPS = nivel de referencia [dB]; d1 = distancia referencia [m]; d2 = segunda medición [m]</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d1</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="distancia [m]" min="0" id="d1" oninput="oninputFunct()" onkeypress="nextFocus('d1', 'd2')"></p>
@@ -166,15 +166,15 @@
 			<p id="output9"></p>
 			<br>
 			<p>Potencia acústica</p>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="24px">P</mi><mi mathsize="24px">W</mi><mi mathsize="24px">L</mi><mo mathvariant="italic" mathsize="24px">=</mo><mn mathvariant="italic" mathsize="24px">10</mn><mo mathvariant="italic" mathsize="24px">&#xD7;</mo><msub><mi mathvariant="italic" mathsize="24px">log</mi><mn mathvariant="italic" mathsize="24px">10</mn></msub><mfenced><mfrac><mi mathsize="24px">W</mi><mrow><mn mathvariant="italic" mathsize="24px">1</mn><mi mathsize="24px">e</mi><mi mathsize="24px">x</mi><msup><mi mathsize="24px">p</mi><mrow><mo mathvariant="italic" mathsize="24px">-</mo><mn mathvariant="italic" mathsize="24px">12</mn></mrow></msup></mrow></mfrac></mfenced></math></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="28px">P</mi><mi mathsize="28px">W</mi><mi mathsize="28px">L</mi><mo mathvariant="italic" mathsize="28px">=</mo><mn mathvariant="italic" mathsize="28px">10</mn><mo mathvariant="italic" mathsize="28px">&#xD7;</mo><msub><mi mathvariant="italic" mathsize="28px">log</mi><mn mathvariant="italic" mathsize="28px">10</mn></msub><mfenced><mfrac><mi mathsize="28px">W</mi><mrow><mn mathvariant="italic" mathsize="28px">1</mn><mi mathsize="28px">e</mi><mi mathsize="28px">x</mi><msup><mi mathsize="28px">p</mi><mrow><mo mathvariant="italic" mathsize="28px">-</mo><mn mathvariant="italic" mathsize="28px">12</mn></mrow></msup></mrow></mfrac></mfenced></math></p>
 			<center><code>PWL = Nivel de potencia sonora; W = Potencia emitida por la fuente sonora [W]; 10^-12 = unidad de referencia [W]</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Potencia</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="16-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output12"></p>
 			<br>
 			<p>Intensidad de sonido de una onda esférica</p>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mi>I</mi><mo mathvariant="italic">=</mo><mfrac><mi>P</mi><mrow><mn mathvariant="italic">4</mn><mi>&#x3C0;</mi><msup><mi>r</mi><mn mathvariant="italic">2</mn></msup></mrow></mfrac></mstyle></math></p>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>LPW</mi></math>:
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mi>I</mi><mo mathvariant="italic">=</mo><mfrac><mi>P</mi><mrow><mn mathvariant="italic">4</mn><mi>&#x3C0;</mi><msup><mi>r</mi><mn mathvariant="italic">2</mn></msup></mrow></mfrac></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>PWL</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="17-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="radio [m]" min="0" id="18-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
@@ -183,7 +183,7 @@
 			
 			<hr>
 			<h2>Longitud de onda</h2>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mi>&#x3BB;</mi><mo>=</mo><mfrac><mover><mi>V</mi><mo>&#x2192;</mo></mover><mi>f</mi></mfrac></mstyle></math></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mi>&#x3BB;</mi><mo>=</mo><mfrac><mover><mi>V</mi><mo>&#x2192;</mo></mover><mi>f</mi></mfrac></mstyle></math></p>
 			<center><code>λ = longitud de onda; <math><mstyle><mover><mi>V</mi><mo>&#x2192;</mo></mover></mstyle></math> = velocidad de propagación [m/s]; f = frecuencia [Hz]</code></center>
 			<br>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi><math><mstyle><mover><mi>V</mi><mo>&#x2192;</mo></mover></mstyle></math></mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="velocidad [m/s]"   id="13-value" oninput="oninputFunct()" onkeypress="nextFocus('13-value', '14-value')"></p>
@@ -191,7 +191,7 @@
 			<p id="output10"></p>
 			<br>
 			<p>periodo</p>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="24px">T</mi><mo mathsize="24px">=</mo><mfrac><mn mathsize="24px">1</mn><mi mathsize="24px">f</mi></mfrac></math></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="28px">T</mi><mo mathsize="28px">=</mo><mfrac><mn mathsize="24px">1</mn><mi mathsize="24px">f</mi></mfrac></math></p>
 			<center><code>T = periodo [s]; f = frecuencia [Hz]</code></center>
 			<br>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="15-value" oninput="oninputFunct()" onkeypress="nextFocus('14-value', '15-value')"></p>
