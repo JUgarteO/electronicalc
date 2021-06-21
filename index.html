@@ -86,10 +86,10 @@
 			document.getElementById("output12").innerHTML = "El nivel de potencia sonora es de: " + Math.round(pwl*100.0)/100.0 + " [PWL]";
 				
 			//Intensidad de sonido de una onda esférica
-			var IA = +document.getElementById("17-value").value;
+			var intac = +document.getElementById("17-value").value;
 			var radio = +document.getElementById("18-value").value;	
-			var IS = IA/(4*pi*(radio^2));
-			document.getElementById("output13").innerHTML = "La intensidad sonora es de: " + IS + " [W/m²]";
+			var intso = intac/(4*pi*(radio*radio));
+			document.getElementById("output13").innerHTML = "La intensidad sonora es de: " + intso + " [W/m²]";
 				
 				
 			            }
