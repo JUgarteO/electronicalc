@@ -80,6 +80,18 @@
 			var periodo = 1 / frecp;
 			document.getElementById("output11").innerHTML = "El tiempo de la onda es de: " + periodo + " [s]";
 
+			//Potencia acústica
+			var watt = +document.getElementById("16-value").value;
+			var PWL = 10*Math.log10(watt/1e-12);
+			document.getElementById("output12").innerHTML = "El nivel de potencia sonora es de: " + periodo + " [PWL]";
+				
+			//Intensidad de sonido de una onda esférica
+			var IA = +document.getElementById("IA").value;
+			var radio = +document.getElementById("radio").value;	
+			var IS = IA/(4*pi*(radio^2));
+			document.getElementById("output13").innerHTML = "El nivel de potencia sonora es de: " + IS + " [PWL]";
+				
+				
 			            }
 			//funcion nextFocus
 			 function nextFocus(inputF, inputS)    {
@@ -152,6 +164,22 @@
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>NPS</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="presión [dB]" min="0" id="p" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output9"></p>
+			<p>Potencia acústica</p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="24px">P</mi><mi mathsize="24px">W</mi><mi mathsize="24px">L</mi><mo mathvariant="italic" mathsize="24px">=</mo><mn mathvariant="italic" mathsize="24px">10</mn><mo mathvariant="italic" mathsize="24px">&#xD7;</mo><msub><mi mathvariant="italic" mathsize="24px">log</mi><mn mathvariant="italic" mathsize="24px">10</mn></msub><mfenced><mfrac><mi mathsize="24px">W</mi><mrow><mn mathvariant="italic" mathsize="24px">1</mn><mi mathsize="24px">e</mi><mi mathsize="24px">x</mi><msup><mi mathsize="24px">p</mi><mrow><mo mathvariant="italic" mathsize="24px">-</mo><mn mathvariant="italic" mathsize="24px">10</mn></mrow></msup></mrow></mfrac></mfenced></math></p>
+			<center><code>LPW = Nivel de potencia sonora [LPW]; W = Potencia emitida por la fuente sonora [W]; 10^-12 = unidad de referncia [W]</code></center>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Potencia</mi></math>:
+			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="watt" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
+			<p id="output12"></p>
+			
+			
+			<p>Intensidad de sonido de una onda esférica</p>
+			<center><code>I = Intensidad de sonido [W/m²]; P = Potencia acústica [LPW]; A = Área del frente de onda [m²], r = Distancia a la fuente sonora [m]</code></center>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="24px">I</mi><mo mathvariant="italic" mathsize="24px">=</mo><mfrac><mi mathvariant="italic" mathsize="24px">P</mi><mrow><mn mathvariant="italic" mathsize="24px">4</mn><mi mathvariant="italic" mathsize="24px">&#x3C0;</mi><mo mathvariant="italic" mathsize="24px">&#xA0;</mo><msup><mi mathvariant="italic" mathsize="24px">r</mi><mn mathvariant="italic" mathsize="24px">2</mn></msup></mrow></mfrac></math></p>
+			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="IA" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
+			<input type="tel" pattern="[0-9.]*" placeholder="radio [m]" min="0" id="radio" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
+			<p id="output13"></p>
+			
+			
 			<hr>
 			<h2>Longitud de onda</h2>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mi>&#x3BB;</mi><mo>=</mo><mfrac><mover><mi>V</mi><mo>&#x2192;</mo></mover><mi>f</mi></mfrac></mstyle></math></p>
