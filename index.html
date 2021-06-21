@@ -90,8 +90,6 @@
 			var radio = +document.getElementById("18-value").value;	
 			var intso = intac/(4*Math.PI*(radio*radio));
 			document.getElementById("output13").innerHTML = "La intensidad sonora es de: " + Math.round(intso*100.0)/100.0 + " [W/m²]";
-				
-				
 			            }
 			//funcion nextFocus
 			 function nextFocus(inputF, inputS)    {
@@ -165,6 +163,7 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="presión [dB]" min="0" id="p" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output9"></p>
 			<br>
+			<!--
 			<p>Potencia acústica</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="28px">P</mi><mi mathsize="28px">W</mi><mi mathsize="28px">L</mi><mo mathvariant="italic" mathsize="28px">=</mo><mn mathvariant="italic" mathsize="28px">10</mn><mo mathvariant="italic" mathsize="28px">&#xD7;</mo><msub><mi mathvariant="italic" mathsize="28px">log</mi><mn mathvariant="italic" mathsize="28px">10</mn></msub><mfenced><mfrac><mi mathsize="28px">W</mi><mrow><mn mathvariant="italic" mathsize="28px">1</mn><mi mathsize="28px">e</mi><mi mathsize="28px">x</mi><msup><mi mathsize="28px">p</mi><mrow><mo mathvariant="italic" mathsize="28px">-</mo><mn mathvariant="italic" mathsize="28px">12</mn></mrow></msup></mrow></mfrac></mfenced></math></p>
 			<center><code>PWL = Nivel de potencia sonora; W = Potencia emitida por la fuente sonora [W]; 10^-12 = unidad de referencia [W]</code></center>
@@ -180,7 +179,7 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="radio [m]" min="0" id="18-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output13"></p>
 			<br>
-			
+			-->
 			<hr>
 			<h2>Longitud de onda</h2>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mi>&#x3BB;</mi><mo>=</mo><mfrac><mover><mi>V</mi><mo>&#x2192;</mo></mover><mi>f</mi></mfrac></mstyle></math></p>
