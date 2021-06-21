@@ -88,7 +88,7 @@
 			//Intensidad de sonido de una onda esférica
 			var intac = +document.getElementById("17-value").value;
 			var radio = +document.getElementById("18-value").value;	
-			var intso = intac/(4*pi*(radio*radio));
+			var intso = intac/(4*Math.PI*(radio*radio));
 			document.getElementById("output13").innerHTML = "La intensidad sonora es de: " + intso + " [W/m²]";
 				
 				
