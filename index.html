@@ -83,7 +83,7 @@
 			//Potencia acústica
 			var watt = +document.getElementById("16-value").value;
 			var pwl = 10*Math.log10(watt/0.000000000001);
-			document.getElementById("output12").innerHTML = "El nivel de potencia sonora es de: " + pwl + " [PWL]";
+			document.getElementById("output12").innerHTML = "El nivel de potencia sonora es de: " + Math.round(pwl*100.0)/100.0 + " [PWL]";
 				
 			//Intensidad de sonido de una onda esférica
 			var IA = +document.getElementById("17-value").value;
