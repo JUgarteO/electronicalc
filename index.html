@@ -94,7 +94,7 @@
 			//dB a Pa
 			var Lp = +document.getElementById("19-value").value;
 			var pa = 0.00002*10^(Lp/20);
-			document.getElementById("output12").innerHTML = "la presión es de: " + Math.round(pa*100.0)/100.0 + " [Pa]";
+			document.getElementById("output14").innerHTML = "la presión es de: " + Math.round(pa*100.0)/100.0 + " [Pa]";
 				
 			            }
 			//funcion nextFocus
@@ -169,6 +169,7 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="presión [dB]" min="0" id="p" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output9"></p>
 			<br>
+			<!--
 			<p>Pa a dB</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="24px">p</mi><mo mathvariant="italic" mathsize="24px">=</mo><msub><mi mathsize="24px">p</mi><mi mathvariant="italic" mathsize="24px">o</mi></msub><mo mathvariant="italic" mathsize="24px">&#xD7;</mo><msup><mn mathvariant="italic" mathsize="24px">10</mn><mfenced><mfrac bevelled="true"><mrow><mi mathvariant="italic" mathsize="24px">L</mi><mi mathvariant="italic" mathsize="24px">p</mi></mrow><mn mathvariant="italic" mathsize="24px">20</mn></mfrac></mfenced></msup></math></p>
 			<center><code>p = presión [Pa]; P0 = presión de referencia: 20 [μPa]; d1 = distancia referencia [m]; Lp = nivel en [dB SPL]</code></center>
