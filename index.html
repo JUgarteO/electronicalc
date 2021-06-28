@@ -99,9 +99,11 @@
 				
 				
 			//sumatoria niveles
-			var lp1 = +document.getElementById("24-value").value;
-			var lp2 = +document.getElementById("25-value").value;
-			var lpt= 10*Math.log10(10^(lp1/10) + 10^(lp2/10));
+			var lp11 = +document.getElementById("24-value").value;
+			var lp21 = +document.getElementById("25-value").value;
+			var lp1 = 10^(lp11/10);
+			var lp2 = 10^(lp21/10);	
+			var lpt= 10*Math.log10(lp1+lp2);
 			document.getElementById("output17").innerHTML = "la sumatoria es de: " + Math.round(lpt*100.0)/100.0 + " [dB<sub>SPL</sub>]";	
 				
 				
