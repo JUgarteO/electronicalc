@@ -28,7 +28,6 @@
 			var pot4 = volt4 * corr4;
 			document.getElementById("output16").innerHTML = "La potencia es de: " + pot4 + " [W]";
 
-
 			//resistencia
 			var corr3 = +document.getElementById("7-value").value;
 			var volt3 = +document.getElementById("8-value").value;
@@ -141,16 +140,16 @@
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math>:
 				<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"     min="0" id="9-value" oninput="oninputFunct()" onkeypress="nextFocus('9-value', '10-value')"></p>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:
-				<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]"         id="10-value" oninput="oninputFunct()" onkeypress="nextFocus('10-value', 'first-value')"></p>
+				<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]"         id="10-value" oninput="oninputFunct()" onkeypress="nextFocus('10-value', '22-value')"></p>
 			<p id="output3"></p>
 			<br>
 			<h2>Ley de Joule:</h2>
 			<center><code>P = potencia [W]; V = voltaje [V]; i = Corriente [A]</code></center>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>P</mi><mo mathvariant="italic">=</mo><mi>v</mi><mo mathvariant="italic">&#xB7;</mo><mi>i</mi></mrow></mstyle></math></p>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:
-				<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"   id="22-value" oninput="oninputFunct()" onkeypress="nextFocus('8-value', '7-value')"></p>
+				<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"   id="22-value" oninput="oninputFunct()" onkeypress="nextFocus('22-value', '23-value')"></p>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:
-				<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="23-value" oninput="oninputFunct()" onkeypress="nextFocus('7-value', '9-value')"></p>
+				<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="23-value" oninput="oninputFunct()" onkeypress="nextFocus('23-value', 'first-value')"></p>
 			<p id="output16"></p>
 			<br>
 			<br>
@@ -252,7 +251,7 @@
 			<center><code>T = periodo [s], f = frecuencia [Hz]</code></center>
 			<br>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:
-			<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="15-value" oninput="oninputFunct()" onkeypress="nextFocus('14-value', '15-value')"></p>
+			<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="15-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
 			<p id="output11"></p>
 			<br>	
 		</div>
