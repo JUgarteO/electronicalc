@@ -44,7 +44,7 @@
 			var frecuencia = +document.getElementById("first-value").value;
 			var resistencia = +document.getElementById("second-value").value;
 			var cap = 1000000 * 1/(2 * Math.PI * frecuencia * resistencia);
-			document.getElementById("output4").innerHTML = "El valor del condensador es: " + cap.toFixed(6) + " [uF]";
+			document.getElementById("output4").innerHTML = "El valor del condensador es: " + cap.toFixed(6) + " [μF]";
 
 			//frecuencia corte
 			var cap2 = +document.getElementById("3-value").value;
@@ -95,7 +95,7 @@
 			//Potencia acústica
 			var watt = +document.getElementById("16-value").value;
 			var pwl = 10*Math.log10(watt/0.000000000001);
-			document.getElementById("output12").innerHTML = "El nivel de potencia sonora es de: " + Math.round(pwl*100.0)/100.0 + " [PWL]";
+			document.getElementById("output12").innerHTML = "El nivel de potencia sonora es de: " + Math.round(pwl*100.0)/100.0 + " [Lw]";
 				
 			//Intensidad de sonido de una onda esférica
 			var intac = +document.getElementById("17-value").value;
@@ -199,7 +199,6 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="presión [dB]" min="0" id="p" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output9"></p>
 			<br>
-			
 			<p>Pa a dB</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="24px">p</mi><mo mathvariant="italic" mathsize="24px">=</mo><msub><mi mathsize="24px">p</mi><mi mathvariant="italic" mathsize="24px">o</mi></msub><mo mathvariant="italic" mathsize="24px">&#xD7;</mo><msup><mn mathvariant="italic" mathsize="24px">10</mn><mfenced><mfrac bevelled="true"><mrow><mi mathvariant="italic" mathsize="24px">L</mi><mi mathvariant="italic" mathsize="24px">p</mi></mrow><mn mathvariant="italic" mathsize="24px">20</mn></mfrac></mfenced></msup></math></p>
 			<center><code>p = presión [Pa]; P0 = presión de referencia: 20 [μPa]; d1 = distancia referencia [m]; Lp = nivel en [dB SPL]</code></center>
@@ -207,11 +206,10 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="dB [SPL]" min="0" id="19-value" oninput="oninputFunct()" onkeypress="nextFocus('d1', 'd2')"></p>
 			<p id="output14"></p>
 			<br>
-			
 			<p>Potencia acústica</p>
 			<p mathsize="28px"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>W</mi></msub><mo>=</mo><mn>10</mn><msub><mi>log</mi><mn>10</mn></msub><mfenced><mstyle displaystyle="false"><mfrac><mi>W</mi><msub><mi>W</mi><mn>0</mn></msub></mfrac></mstyle></mfenced></math></p>
-			<center><code>Lw = Nivel de potencia sonora [dB]; W = Potencia emitida por la fuente sonora [W]; Wo = 10^-12 [W] potenica acústica de referencia (umbral de audición)</code></center>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Potencia</mi></math>:
+			<center><code>Lw = Nivel de potencia sonora [dB]; W = Potencia emitida por la fuente sonora [W]; Wo = 10^-12 [W] potencia acústica de referencia (umbral de audición)</code></center>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>W</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="16-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output12"></p>
 			<br>
@@ -223,7 +221,6 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="radio [m]" min="0" id="18-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output13"></p>
 			<br>
-			
 			<hr>
 			<h2>Longitud de onda</h2>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>&#x3BB;</mi><mo>=</mo><mfrac><mi>c</mi><mi>f</mi></mfrac></mrow></mstyle></math></p>
