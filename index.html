@@ -209,8 +209,8 @@
 			<br>
 			
 			<p>Potencia acústica</p>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="28px">P</mi><mi mathsize="28px">W</mi><mi mathsize="28px">L</mi><mo mathvariant="italic" mathsize="28px">=</mo><mn mathvariant="italic" mathsize="28px">10</mn><mo mathvariant="italic" mathsize="28px">&#xD7;</mo><msub><mi mathvariant="italic" mathsize="28px">log</mi><mn mathvariant="italic" mathsize="28px">10</mn></msub><mfenced><mfrac><mi mathsize="28px">W</mi><mrow><mn mathvariant="italic" mathsize="28px">1</mn><mi mathsize="28px">e</mi><mi mathsize="28px">x</mi><msup><mi mathsize="28px">p</mi><mrow><mo mathvariant="italic" mathsize="28px">-</mo><mn mathvariant="italic" mathsize="28px">12</mn></mrow></msup></mrow></mfrac></mfenced></math></p>
-			<center><code>PWL = Nivel de potencia sonora; W = Potencia emitida por la fuente sonora [W]; 10^-12 = unidad de referencia [W] (unmbral de audición)</code></center>
+			<p mathsize="28px"><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>W</mi></msub><mo>=</mo><mn>10</mn><msub><mi>log</mi><mn>10</mn></msub><mfenced><mstyle displaystyle="false"><mfrac><mi>W</mi><msub><mi>W</mi><mn>0</mn></msub></mfrac></mstyle></mfenced></math></p>
+			<center><code>Lw = Nivel de potencia sonora [dB]; W = Potencia emitida por la fuente sonora [W]; Wo = 10^-12 [W] potenica acústica de referencia (umbral de audición)</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Potencia</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="16-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output12"></p>
