@@ -59,9 +59,9 @@
 			document.getElementById("output6").innerHTML = "El valor de la resistencia es: " + Math.round(res22) + " [Ω]";
 
 			//incremento Potencia
-			var pot = +document.getElementById("pot").value;
-			var aum = 10*Math.log10(pot);
-			document.getElementById("output7").innerHTML = "El aumento del Nivel de Presión Sonora segun la Potencia es de: " + Math.round(aum*100.0)/100.0 + " [dB<sub>SPL</sub>]"
+			//var pot = +document.getElementById("pot").value;
+			//var aum = 10*Math.log10(pot);
+			//document.getElementById("output7").innerHTML = "El aumento del Nivel de Presión Sonora segun la Potencia es de: " + Math.round(aum*100.0)/100.0 + " [dB<sub>SPL</sub>]"
 
 			//aumento Pascales
 			var p1 = +document.getElementById("p1").value;
@@ -103,7 +103,7 @@
 			var lp21 = +document.getElementById("25-value").value;
 			var lp1 = 10^(lp11/10);
 			var lp2 = 10^(lp21/10);	
-			var lpt= 10*Math.log10(lp1+lp2);
+			var lpt= 10*Math.log10((10^lp1)+(10^lp2));
 			document.getElementById("output17").innerHTML = "la sumatoria es de: " + Math.round(lpt*100.0)/100.0 + " [dB<sub>SPL</sub>]";	
 						
 			//Intensidad de sonido de una onda esférica
@@ -218,13 +218,14 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="16-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p id="output12"></p>
 			<br>
+			<!--
 			<p>composición niveles acústicos</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><msub><mi>L</mi><mrow><mi>P</mi><mi>T</mi></mrow></msub><mo>=</mo><mn>10</mn><msub><mi>log</mi><mn>10</mn></msub><mfenced><mrow><msup><mn>10</mn><mstyle displaystyle="false"><mfrac bevelled="true"><mrow><mi>L</mi><mi>p</mi><mn>1</mn></mrow><mn>10</mn></mfrac></mstyle></msup><mo>+</mo><msup><mn>10</mn><mstyle displaystyle="false"><mfrac bevelled="true"><mrow><mi>L</mi><mi>p</mi><mn>2</mn></mrow><mn>10</mn></mfrac></mstyle></msup></mrow></mfenced></mrow></mstyle></math></p>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Lp1</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="Lp1 [dB]" min="0" id="24-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Lp2</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="Lp2 [dB]" min="0" id="25-value" oninput="oninputFunct()" onkeypress="nextFocus('p', '13-value')"></p>
-			<p id="output17"></p>
+			<p id="output17"></p>-->
 			<br>
 			<p>Intensidad de sonido de una onda esférica</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mi>I</mi><mo mathvariant="italic">=</mo><mfrac><mi>W</mi><mrow><mn mathvariant="italic">4</mn><mi>&#x3C0;</mi><msup><mi>r</mi><mn mathvariant="italic">2</mn></msup></mrow></mfrac></mstyle></math></p>
