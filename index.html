@@ -20,43 +20,43 @@
 			var res = +document.getElementById("5-value").value;
 			var corriente = +document.getElementById("6-value").value;
 			var volt = corriente * res;
-			document.getElementById("output1").innerHTML = "El valor del voltaje es: " + volt + " [V]";
+			document.getElementById("output1").innerHTML = "El valor del voltaje es " + volt + " [V]";
 
 			//potencia
 			var volt4 = +document.getElementById("22-value").value;
 			var corr4 = +document.getElementById("23-value").value;
 			var pot4 = volt4 * corr4;
-			document.getElementById("output16").innerHTML = "La potencia es de: " + pot4 + " [W]";
+			document.getElementById("output16").innerHTML = "La potencia es de " + pot4 + " [W]";
 
 			//resistencia
 			var corr3 = +document.getElementById("7-value").value;
 			var volt3 = +document.getElementById("8-value").value;
 			var res3 = volt3/corr3;
-			document.getElementById("output2").innerHTML = "El valor de la resistencia es: " + Math.round(res3) + " [Ω]";
+			document.getElementById("output2").innerHTML = "El valor de la resistencia es " + Math.round(res3) + " [Ω]";
 
 			//corriente
 			var volt2 = +document.getElementById("9-value").value;
 			var rest2 = +document.getElementById("10-value").value;
 			var corr2 = volt2/rest2;
-			document.getElementById("output3").innerHTML = "El valor de la corriente es de: " + corr2 + " [A]";
+			document.getElementById("output3").innerHTML = "El valor de la corriente es de " + corr2 + " [A]";
 
 			//condensador
 			var frecuencia = +document.getElementById("first-value").value;
 			var resistencia = +document.getElementById("second-value").value;
 			var cap = 1000000 * 1/(2 * Math.PI * frecuencia * resistencia);
-			document.getElementById("output4").innerHTML = "El valor del condensador es: " + cap.toFixed(6) + " [μF]";
+			document.getElementById("output4").innerHTML = "El valor del condensador es " + cap.toFixed(6) + " [μF]";
 
 			//frecuencia corte
 			var cap2 = +document.getElementById("3-value").value;
 			var res2 = +document.getElementById("4-value").value;
 			var fc = 1/(2 * Math.PI * cap2 * res2);
-			document.getElementById("output5").innerHTML = "El valor de la frecuencia de corte es: " + Math.round(fc) + " [Hz]";
+			document.getElementById("output5").innerHTML = "El valor de la frecuencia de corte es " + Math.round(fc) + " [Hz]";
 
 			//resistencia
 			var fre22 = +document.getElementById("11-value").value;
 			var cap22 = +document.getElementById("12-value").value;
 			var res22 = 1/(2 * Math.PI * fre22 * cap22);
-			document.getElementById("output6").innerHTML = "El valor de la resistencia es: " + Math.round(res22) + " [Ω]";
+			document.getElementById("output6").innerHTML = "El valor de la resistencia es " + Math.round(res22) + " [Ω]";
 
 			//incremento Potencia
 			//var pot = +document.getElementById("pot").value;
@@ -66,36 +66,36 @@
 			//aumento Pascales
 			var p1 = +document.getElementById("p1").value;
 			var ps = 20*Math.log10(p1/0.00002);
-			document.getElementById("output8").innerHTML = "El aumento en dB por Presión sonora es de: " +Math.round(ps*100.0)/100.0 + " [dB<sub>SPL</sub>]";
+			document.getElementById("output8").innerHTML = "El aumento en dB por Presión sonora es de " +Math.round(ps*100.0)/100.0 + " [dB<sub>SPL</sub>]";
 
 			//atenuacion por distancia
 			var d1 = +document.getElementById("d1").value;
 			var d2 = +document.getElementById("d2").value;
 			var p = +document.getElementById("p").value;
 			var atd = p-20*Math.log10(d2/d1);
-			document.getElementById("output9").innerHTML = "la atenuación por distancia es de: " + Math.round(atd*100.0)/100.0 + " [dB<sub>SPL</sub>]";
+			document.getElementById("output9").innerHTML = "la atenuación por distancia es de " + Math.round(atd*100.0)/100.0 + " [dB<sub>SPL</sub>]";
 				
 			//longitud de onda
 			var vel = +document.getElementById("13-value").value;
 			var frec = +document.getElementById("14-value").value;
 			var onda = vel / frec;
-			document.getElementById("output10").innerHTML = "La longitud de onda es de: " + onda + " [m]";
+			document.getElementById("output10").innerHTML = "La longitud de onda es de " + onda + " [m]";
 				
 			//frecuencia
 			var vel2 = +document.getElementById("20-value").value;
 			var onda2 = +document.getElementById("21-value").value;
 			var frec3 = vel2 / onda2;
-			document.getElementById("output15").innerHTML = "La frecuencia es de: " + frec3 + " [Hz]";
+			document.getElementById("output15").innerHTML = "La frecuencia es de " + frec3 + " [Hz]";
 				
 			//longitud de onda
 			var frecp = +document.getElementById("15-value").value;
 			var periodo = 1 / frecp;
-			document.getElementById("output11").innerHTML = "El tiempo de la onda es de: " + periodo + " [s]";
+			document.getElementById("output11").innerHTML = "El tiempo de la onda es de " + periodo + " [s]";
 
 			//Potencia acústica
 			var watt = +document.getElementById("16-value").value;
 			var pwl = 10*Math.log10(watt/0.000000000001);
-			document.getElementById("output12").innerHTML = "El nivel de potencia sonora es de: " + Math.round(pwl*100.0)/100.0 + " [Lw]";
+			document.getElementById("output12").innerHTML = "El nivel de potencia sonora es de " + Math.round(pwl*100.0)/100.0 + " [Lw]";
 				
 				
 			//sumatoria niveles
@@ -104,18 +104,18 @@
 			var lp1 = 10^(lp11/10);
 			var lp2 = 10^(lp21/10);	
 			var lpt= 10*Math.log10((10^lp1)+(10^lp2));
-			document.getElementById("output17").innerHTML = "la sumatoria es de: " + Math.round(lpt*100.0)/100.0 + " [dB<sub>SPL</sub>]";	
+			document.getElementById("output17").innerHTML = "la sumatoria es de " + Math.round(lpt*100.0)/100.0 + " [dB<sub>SPL</sub>]";	
 						
 			//Intensidad de sonido de una onda esférica
 			var intac = +document.getElementById("17-value").value;
 			var radio = +document.getElementById("18-value").value;	
 			var intso = intac/(4*Math.PI*(radio*radio));
-			document.getElementById("output13").innerHTML = "La intensidad sonora es de: " + Math.round(intso*100.0)/100.0 + " [W/m²]";
+			document.getElementById("output13").innerHTML = "La intensidad sonora es de " + Math.round(intso*100.0)/100.0 + " [W/m²]";
 				
 			//dB a Pa
 			var Lp = +document.getElementById("19-value").value;
 			var pa = 0.00002*10^(Lp/20);
-			document.getElementById("output14").innerHTML = "la presión es de: " + Math.round(pa*100.0)/100.0 + " [Pa]";
+			document.getElementById("output14").innerHTML = "la presión es de " + Math.round(pa*100.0)/100.0 + " [Pa]";
 				
 			            }
 			//funcion nextFocus
