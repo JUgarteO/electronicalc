@@ -22,6 +22,13 @@
 			var volt = corriente * res;
 			document.getElementById("output1").innerHTML = "El valor del voltaje es: " + volt + " [V]";
 
+			//potencia
+			var volt4 = +document.getElementById("22-value").value;
+			var corr4 = +document.getElementById("23-value").value;
+			var pot4 = volt4 * corr4;
+			document.getElementById("output16").innerHTML = "La potencia es de: " + pot4 + " [W]";
+
+
 			//resistencia
 			var corr3 = +document.getElementById("7-value").value;
 			var volt3 = +document.getElementById("8-value").value;
@@ -75,7 +82,13 @@
 			var onda = vel / frec;
 			document.getElementById("output10").innerHTML = "La longitud de onda es de: " + onda + " [m]";
 				
-			//periodo de onda
+			//frecuencia
+			var vel2 = +document.getElementById("20-value").value;
+			var onda2 = +document.getElementById("21-value").value;
+			var frec3 = vel2 / onda2;
+			document.getElementById("output15").innerHTML = "La frecuencia es de: " + frec3 + " [Hz]";
+				
+			//longitud de onda
 			var frecp = +document.getElementById("15-value").value;
 			var periodo = 1 / frecp;
 			document.getElementById("output11").innerHTML = "El tiempo de la onda es de: " + periodo + " [s]";
@@ -109,27 +122,46 @@
 		<div class="container-fluid">
 			<h1>Calculadora de Circuitos Electrónicos</h1>
 			<h2>Ley de Ohm:</h2>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>V</mi><mo>=</mo><mi>R</mi><mo>&#xB7;</mo><mi>i</mi></mrow></mstyle></math></p>
-			<center><code>V = voltaje; R = Resistencia; i = Corriente</code></center>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]" min="0" id="5-value" oninput="oninputFunct()" onkeypress="nextFocus('5-value', '6-value')"></p>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="6-value" oninput="oninputFunct()" onkeypress="nextFocus('6-value', '8-value')"></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>&#xB7;</mo><mi>i</mi></mrow></mstyle></math></p>
+			<center><code>v = voltaje [V]; R = Resistencia [Ω]; i = Corriente [A]</code></center>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]" min="0" id="5-value" oninput="oninputFunct()" onkeypress="nextFocus('5-value', '6-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="6-value" oninput="oninputFunct()" onkeypress="nextFocus('6-value', '8-value')"></p>
 			<p id="output1"></p>
 			<br>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>R</mi><mo>=</mo><mfrac><mi>V</mi><mi>i</mi></mfrac></mrow></mstyle></math></p>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"   id="8-value" oninput="oninputFunct()" onkeypress="nextFocus('8-value', '7-value')"></p>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="7-value" oninput="oninputFunct()" onkeypress="nextFocus('7-value', '9-value')"></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>R</mi><mo>=</mo><mfrac><mi>v</mi><mi>i</mi></mfrac></mrow></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"   id="8-value" oninput="oninputFunct()" onkeypress="nextFocus('8-value', '7-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="7-value" oninput="oninputFunct()" onkeypress="nextFocus('7-value', '9-value')"></p>
 			<p id="output2"></p>
 			<br>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>i</mi><mo>=</mo><mfrac><mi>V</mi><mi>R</mi></mfrac></mrow></mstyle></math></p>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"     min="0" id="9-value" oninput="oninputFunct()" onkeypress="nextFocus('9-value', '10-value')"></p>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]"         id="10-value" oninput="oninputFunct()" onkeypress="nextFocus('10-value', 'first-value')"></p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>i</mi><mo>=</mo><mfrac><mi>v</mi><mi>R</mi></mfrac></mrow></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"     min="0" id="9-value" oninput="oninputFunct()" onkeypress="nextFocus('9-value', '10-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>R</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="resistencia [Ω]"         id="10-value" oninput="oninputFunct()" onkeypress="nextFocus('10-value', 'first-value')"></p>
 			<p id="output3"></p>
+			<br>
+			<h2>Ley de Joule:</h2>
+			<center><code>P = potencia [W]; V = voltaje [V]; i = Corriente [A]</code></center>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>P</mi><mo mathvariant="italic">=</mo><mi>v</mi><mo mathvariant="italic">&#xB7;</mo><mi>i</mi></mrow></mstyle></math></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="voltaje [V]"   id="22-value" oninput="oninputFunct()" onkeypress="nextFocus('8-value', '7-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="corriente [A]" id="23-value" oninput="oninputFunct()" onkeypress="nextFocus('7-value', '9-value')"></p>
+			<p id="output16"></p>
+			<br>
+			<br>
 			<hr>
 			<h2>Filtro RC:</h2>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>C</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><msub><mi>X</mi><mi>c</mi></msub></mrow></mfrac></mrow></mstyle></math></p>
 			<center><code style="text-align: center;">C = Condensador; f = Frecuencia; Xc = Reactancia capacitiva; R = Resistencia</code></center>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="first-value" min="0" oninput="oninputFunct()" onkeypress="nextFocus('first-value', 'second-value')" ></p>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mi>c</mi></msub></math>: <input type="tel" pattern="[0-9.]*" placeholder="reactancia [Ω]" min="0" id="second-value" oninput="oninputFunct()" onkeypress="nextFocus('second-value', '3-value')" ></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="first-value" min="0" oninput="oninputFunct()" onkeypress="nextFocus('first-value', 'second-value')" ></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>X</mi><mi>c</mi></msub></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="reactancia [Ω]" min="0" id="second-value" oninput="oninputFunct()" onkeypress="nextFocus('second-value', '3-value')" ></p>
 			<p id="output4"></p>
 			<br>
 			<p>Frecuencia de Corte:</p>
@@ -146,14 +178,14 @@
 			<h2>Nivel de Presión Sonora (SPL)</h2>
 			<p>Relación NPS Potencia</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>L</mi><mi>W</mi></msub><mo mathvariant="italic">=</mo><mn mathvariant="italic">10</mn><mo mathvariant="italic">&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn mathvariant="italic">10</mn></msub><mfenced><mrow><mi>P</mi><mi>o</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>i</mi><mi>a</mi></mrow></mfenced></mstyle></math></p>
-			<center><code>Lw = nivel de potencia; log = logaritmo base 10; P = Potencia (Watts)</code></center>
+			<center><code>Lw = nivel de potencia [dB<sub>SPL</sub>]; log = logaritmo base 10; P = Potencia [W]</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Potencia</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="Watts [W]" min="0" id="pot" oninput="oninputFunct()" onkeypress="nextFocus('pot', 'p1')"></p>
 			<p id="output7"></p>
 			<br>
 			<p>Aumento por Presión Sonora</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><msub><mi>L</mi><mi>P</mi></msub><mo>=</mo><mn>20</mn><mo>&#xD7;</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>10</mn></msub><mfenced><mfrac><msub><mi>P</mi><mn>1</mn></msub><msub><mi>P</mi><mn>0</mn></msub></mfrac></mfenced></mstyle></math></p>
-			<center><code>log = logaritmo base 10; P1 = presión sonora eficaz (RMS); P0 = presión de referencia: 20 [μPa]</code></center>
+			<center><code>log = logaritmo base 10; P1 = presión sonora eficaz (RMS) [Pa]; P0 = presión de referencia: 20 [μPa]</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>P1</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="presión [Pa]" min="0" id="p1" oninput="oninputFunct()" onkeypress="nextFocus('p1', 'd1')"></p>
 			<p id="output8"></p>
@@ -196,20 +228,33 @@
 			-->
 			<hr>
 			<h2>Longitud de onda</h2>
-			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mi>&#x3BB;</mi><mo>=</mo><mfrac><mover><mi>V</mi><mo>&#x2192;</mo></mover><mi>f</mi></mfrac></mstyle></math></p>
-			<center><code>λ = longitud de onda; <math><mstyle><mover><mi>V</mi><mo>&#x2192;</mo></mover></mstyle></math> = velocidad de propagación [m/s]; f = frecuencia [Hz]</code></center>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>&#x3BB;</mi><mo>=</mo><mfrac><mi>c</mi><mi>f</mi></mfrac></mrow></mstyle></math></p>
+			<center><code>λ = longitud de onda [m]; c = velocidad de propagación [m/s]; f = frecuencia [Hz]</code></center>
 			<br>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi><math><mstyle><mover><mi>V</mi><mo>&#x2192;</mo></mover></mstyle></math></mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="velocidad [m/s]"   id="13-value" oninput="oninputFunct()" onkeypress="nextFocus('13-value', '14-value')"></p>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="14-value" oninput="oninputFunct()" onkeypress="nextFocus('14-value', '15-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>c</mi></math>:
+			<input type="tel" pattern="[0-9.]*" placeholder="velocidad [m/s]"   id="13-value" oninput="oninputFunct()" onkeypress="nextFocus('13-value', '14-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:
+			<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="14-value" oninput="oninputFunct()" onkeypress="nextFocus('14-value', '15-value')"></p>
 			<p id="output10"></p>
 			<br>
-			<p>Periodo</p>
+			<p>Frecuencia</p>
+			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="28px"><mrow><mi>f</mi><mo mathvariant="italic">=</mo><mfrac><mi mathvariant="italic">c</mi><mi mathvariant="italic">&#x3BB;</mi></mfrac></mrow></mstyle></math></p>
+			<center><code>f = frecuencia [Hz], c = velocidad de propagación [m/s], λ = longitud de onda [m]</code></center>
+			<br>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>c</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="velocidad [m/s]"   id="20-value" oninput="oninputFunct()" onkeypress="nextFocus('15-value', '20-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>λ</mi></math>:
+				<input type="tel" pattern="[0-9.]*" placeholder="metros [m]" id="21-value" oninput="oninputFunct()" onkeypress="nextFocus('20-value', '21-value')"></p>
+				<p id="output15"></p>
+			<br>	
+			<p>Período</p>
 			<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mi mathsize="28px">T</mi><mo mathsize="28px">=</mo><mfrac><mn mathsize="24px">1</mn><mi mathsize="24px">f</mi></mfrac></math></p>
 			<center><code>T = periodo [s], f = frecuencia [Hz]</code></center>
 			<br>
-			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="15-value" oninput="oninputFunct()" onkeypress="nextFocus('14-value', '15-value')"></p>
+			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:
+			<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="15-value" oninput="oninputFunct()" onkeypress="nextFocus('14-value', '15-value')"></p>
 			<p id="output11"></p>
-			<br>
+			<br>	
 		</div>
 		<footer>
 		<hr>
