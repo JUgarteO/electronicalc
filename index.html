@@ -117,7 +117,7 @@
 			var pa = 0.00002*10^(Lp/20);
 			document.getElementById("output14").innerHTML = "la presión es de " + Math.round(pa*100.0)/100.0 + " [Pa]";
 				
-			//Absorvancia
+			//Absorbancia
 			var i = +document.getElementById("transmitida").value;
 			var io = +document.getElementById("incidente").value;
 			var abso = Math.log10(i/io)*-1;
@@ -269,8 +269,9 @@
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="15-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
 			<p id="output11"></p>
-			<br>	
-			<p>Absorbancia</p>
+			<br>
+			<hr>
+			<h2>Absorbancia</h2>
 			<br>
 			<center><code>A<sub>λ</sub> = absorbancia, I = intensidad de la luz transmitida ,Io = intensidad de la luz incidente</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>I</mi></math>:
