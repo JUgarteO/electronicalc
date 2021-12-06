@@ -120,7 +120,7 @@
 			//Absorvancia
 			var i = +document.getElementById("transmitida").value;
 			var io = +document.getElementById("incidente").value;
-			var abso = -1*Math.log10(i/io);
+			var abso = Math.log10(i/io)*-1;
 			document.getElementById("output18").innerHTML = "la absorbancia es " + abso + ;
 				
 			            }
