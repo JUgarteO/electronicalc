@@ -117,6 +117,12 @@
 			var pa = 0.00002*10^(Lp/20);
 			document.getElementById("output14").innerHTML = "la presión es de " + Math.round(pa*100.0)/100.0 + " [Pa]";
 				
+			//Absorvancia
+			var i = +document.getElementById("transmitida").value;
+			var io = +document.getElementById("incidente").value;
+			var abso = -1*Math.log10(i/io);
+			document.getElementById("output18").innerHTML = "la absorbancia es " + abso + ;
+				
 			            }
 			//funcion nextFocus
 			 function nextFocus(inputF, inputS)    {
@@ -264,6 +270,13 @@
 			<input type="tel" pattern="[0-9.]*" placeholder="frecuencia [Hz]" id="15-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
 			<p id="output11"></p>
 			<br>	
+			<p>Absorvancia</p>
+			<br>
+			<center><code>Aλ = absorbancia, I = intensidad de la luz transmitida ,Io = intensidad de la luz incidente</code></center>
+			<input type="tel" pattern="[0-9.]*" placeholder="transmitida" id="transmitida" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
+			<input type="tel" pattern="[0-9.]*" placeholder="incidente" id="incidente" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
+		        <p id="output18"></p>
+			
 		</div>
 		<footer>
 		<hr>
