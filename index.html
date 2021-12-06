@@ -76,12 +76,18 @@
 			var atd = p-20*Math.log10(d2/d1);
 			document.getElementById("output9").innerHTML = "la atenuación por distancia es de " + Math.round(atd*100.0)/100.0 + " [dB<sub>SPL</sub>]";
               
-              
-             //Absorbancia
-             var Itx = +document.getElementById("26-value").value;
-             var Irx = +document.getElementById("27-value").value;
-             var abso = -1*Math.log10(Itx/Irx);
-             document.getElementById("output18").innerHTML = abso;
+         		//Absorbancia
+         		var Itx = +document.getElementById("26-value").value;
+         	    	var Irx = +document.getElementById("27-value").value;
+         	    	var abso = -1*Math.log10(Itx/Irx);
+         	    	document.getElementById("output18").innerHTML = abso;
+				
+			//Lambert
+			var absm = +document.getElementById("28-value").value;
+			var abmol = +document.getElementById("29-value").value;
+			var longpo = +document.getElementById("30-value").value;
+			var abso2 = absm * abmol * longpo;
+			document.getElementById("output19").innerHTML = abso2;	
 				
 			//longitud de onda
 			var vel = +document.getElementById("13-value").value;
@@ -283,6 +289,19 @@
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>I</mi><mi><sub>o</sub></mi></math>:
 			<input type="tel" pattern="[0-9.]*" placeholder="incidente" id="27-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
 		    <p id="output18"></p>
+			
+			
+		<h2>Ley de Lambert-Beer</h2>
+		<p><math style="font-family:'Times New Roman'" xmlns="http://www.w3.org/1998/Math/MathML"><mstyle mathsize="24px"><mrow><mi>A</mi><mo>=</mo><mi>C</mi><mo>&#xB7;</mo><mi>&#949;</mi><mo>&#xB7;</mo><mi>C</mi></mrow></mstyle></math></p>
+		<center><code>A<sub>λ</sub> = absorbancia, C = Concentración del cromóforo ;L = Longitud del paso óptico que contiene la muestra; <mi>&#949;</mi> = Absorptividad molar. Depende del cromóforo en si mismo, de la landa_simple.bmp y de las condiciones de medida (pH, T...). Ya que la absorbancia es adimensional las unidades son concentración-1 longitud-1.</code></center>
+		<input type="tel" pattern="[0-9.]*" placeholder="Concentración" id="28-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
+		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#949</mi><mi><sub>o</sub></mi></math>:
+		<input type="tel" pattern="[0-9.]*" placeholder="Absorptividad molar" id="29-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
+		<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi><mi><sub>o</sub></mi></math>:
+		<input type="tel" pattern="[0-9.]*" placeholder="Longitud paso optico" id="30-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
+
+		<p id="output19"></p>
+			
 			
 		</div>
 		<footer>
