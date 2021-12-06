@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 	<head>
@@ -74,6 +75,13 @@
 			var p = +document.getElementById("p").value;
 			var atd = p-20*Math.log10(d2/d1);
 			document.getElementById("output9").innerHTML = "la atenuación por distancia es de " + Math.round(atd*100.0)/100.0 + " [dB<sub>SPL</sub>]";
+              
+              
+             //Absorbancia
+             var Itx = +document.getElementById("26-value").value;
+             var Irx = +document.getElementById("27-value").value;
+             var abso = -1*Math.log10(Itx/Irx);
+             document.getElementById("output18").innerHTML = abso;
 				
 			//longitud de onda
 			var vel = +document.getElementById("13-value").value;
@@ -117,11 +125,7 @@
 			var pa = 0.00002*10^(Lp/20);
 			document.getElementById("output14").innerHTML = "la presión es de " + Math.round(pa*100.0)/100.0 + " [Pa]";
 				
-			//Absorbancia
-			var i = +document.getElementById("transmitida").value;
-			var io = +document.getElementById("incidente").value;
-			var abso = Math.log10(i/io);
-			document.getElementById("output18").innerHTML = "la absorbancia es " + abso + ;
+			
 				
 			            }
 			//funcion nextFocus
@@ -275,10 +279,10 @@
 			<br>
 			<center><code>A<sub>λ</sub> = absorbancia, I = intensidad de la luz transmitida ,Io = intensidad de la luz incidente</code></center>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>I</mi></math>:
-			<input type="tel" pattern="[0-9.]*" placeholder="transmitida" id="transmitida" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
+			<input type="tel" pattern="[0-9.]*" placeholder="transmitida" id="26-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
 			<p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>I</mi><mi><sub>o</sub></mi></math>:
-			<input type="tel" pattern="[0-9.]*" placeholder="incidente" id="incidente" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
-		        <p id="output18"></p>
+			<input type="tel" pattern="[0-9.]*" placeholder="incidente" id="27-value" oninput="oninputFunct()" onkeypress="nextFocus('21-value', '15-value')"></p>
+		    <p id="output18"></p>
 			
 		</div>
 		<footer>
