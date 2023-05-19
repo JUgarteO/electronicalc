@@ -131,6 +131,15 @@
 			var pa = 0.00002*10^(Lp/20);
 			document.getElementById("output14").innerHTML = "la presión es de " + Math.round(pa*100.0)/100.0 + " [Pa]";
 				
+			//Cálculo Cableado Líneas 100 [V]
+			var PotCC = +document.getElementById("20-value").value;
+			var longCC = +document.getElementById("21-value").value;
+			var conduct = +document.getElementById("22-value").value;
+			var CdT = +document.getElementById("23-value").value;
+			var TensCC = +document.getElementById("24-value").value;
+			var cc = (2*PotCC*longCC*CdT*TensCC)/(conduct);
+			document.getElementById("output20").innerHTML = "la sección mínima calculada es de " + Math.round(pa*100.0)/100.0 + " [mm²]";
+				
 			
 				
 			            }
